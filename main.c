@@ -19,25 +19,34 @@
 
 int		main()
 {
-//	size_t len = 4;
-//	int i = 0;
+	size_t len = 4;
+//	int i = 'u';
 //	int j = ;
 //	unsigned int k = 3;
 //	int fd = 1;
 //	char c = '*';
 //	char d = '';
 //	char e = '';
-	const char *f = "mfsoeigjsesienikamdpakdsieni";
-	const char *g = "sieni";
+	char *f = "lakka";
+//	const char g[6] = "sieni";
 //	char *h = "";
 
 //	ft_putchar(c);
 //	ft_putnbr(i);
 //	ft_putstr(g);
-//
+
 //	printf("%s", ft_strcat(f, g));
 //	printf("%c", '\n');
 //	printf("%s", strcat(f, g));
+
+//	printf("%s", ft_strncat(f, g, len));
+//	printf("%c", '\n');
+//	printf("%s", strncat(f, g, len));
+
+	printf("%s", f);
+	ft_bzero(f, len);
+	printf("%c", '\n');
+	printf("%s", f);
 
 //	printf("%s", ft_strcpy(f, g));
 //	printf("%c", '\n');
@@ -47,9 +56,9 @@ int		main()
 //	printf("%c", '\n');
 //	printf("%s", strdup(f));
 
-	printf("%s", ft_strstr(f, g));
-	printf("%c", '\n');
-	printf("%s", strstr(f, g));
+//	printf("%s", ft_strstr(f, g));
+//	printf("%c", '\n');
+//	printf("%s", strstr(f, g));
 
 //	printf("%s", ft_strncpy(f, g, len));
 //	printf("%c", '\n');
@@ -111,6 +120,26 @@ int		main()
 //	printf("%s", ft_strmap(f, testi));
 
 //	printf("%s", ft_strmapi(f, testi));
+
+//	printf("%c", ft_tolower(i));
+
+//	printf("%c", ft_toupper(i));
+	
+//	printf("%d", ft_isprint(i));
+
+//	printf("%d", ft_isascii(i));
+
+//	printf("%d", ft_isalnum(i));
+
+//	printf("%d", ft_isdigit(i));
+
+//	printf("%d", ft_isalpha(i));
+
+//	printf("%d", ft_strncmp(f, g, len));
+
+//	printf("%s", ft_strchr(f, i));
+	
+//	printf("%s", ft_strrchr(f, i));
 
 	return (0);
 }
