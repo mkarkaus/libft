@@ -16,10 +16,14 @@
 
 //char	*strncpy(char *dst, const char *src, size_t len);
 //char	testi(unsigned int i, char c);
+//void	*memset(void *s, int c, size_t n);
+//void	*memmove(void *dest, const void *src, size_t len);
+//void	*memchr(const void *s, int c, size_t n);
+int	memcmp(const void *s1, const void *s2, size_t n);
 
 int		main()
 {
-	size_t len = 4;
+	size_t len = 5;
 //	int i = 'u';
 //	int j = ;
 //	unsigned int k = 3;
@@ -27,8 +31,8 @@ int		main()
 //	char c = '*';
 //	char d = '';
 //	char e = '';
-	char *f = "lakka";
-//	const char g[6] = "sieni";
+	char *f = "kiuaa";
+	char *g = "kiuki";
 //	char *h = "";
 
 //	ft_putchar(c);
@@ -43,10 +47,20 @@ int		main()
 //	printf("%c", '\n');
 //	printf("%s", strncat(f, g, len));
 
-	printf("%s", f);
-	ft_bzero(f, len);
+//	printf("%d", ft_memcmp(f, g, len));
 	printf("%c", '\n');
-	printf("%s", f);
+	printf("%d", memcmp(f, g, len));
+	printf("%c", '\n');
+//	printf("%s", f);
+//	printf("%p", memchr(f, i, len));
+//	printf("%s", f);
+	printf("%d", ft_memcmp(f, g, len));
+
+
+//	printf("%s", f);
+//	ft_bzero(f, len);
+//	printf("%c", '\n');
+//	printf("%s", f);
 
 //	printf("%s", ft_strcpy(f, g));
 //	printf("%c", '\n');
