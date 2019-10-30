@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 20:10:40 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/22 21:07:46 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/10/30 13:59:57 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	unsigned int i;
+	size_t	i;
 
 	i = 0;
 	while (i < len && src[i])
@@ -22,11 +22,10 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 		dst[i] = src[i];
 		i++;
 	}
-	if (src[i] == '\0')
-		while (dst[i] != '\0')
-		{
-			dst[i] = '\0';
-			i++;
-		}
+	while (i < len)
+	{
+		dst[i] = '\0';
+		i++;
+	}
 	return (dst);
 }

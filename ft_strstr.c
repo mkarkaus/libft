@@ -6,13 +6,13 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 15:52:41 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/24 17:24:55 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/10/30 11:39:38 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int 	i;
+	int		i;
 	char	*hay;
 	char	*need;
 

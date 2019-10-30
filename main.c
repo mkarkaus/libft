@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:21:07 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/24 17:25:20 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/10/30 16:25:43 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@
 //void	*memset(void *s, int c, size_t n);
 //void	*memmove(void *dest, const void *src, size_t len);
 //void	*memchr(const void *s, int c, size_t n);
-int	memcmp(const void *s1, const void *s2, size_t n);
+//int	memcmp(const void *s1, const void *s2, size_t n);
 
 int		main()
 {
-	size_t len = 5;
-//	int i = 'u';
+//	size_t len = 40;
+	int i = 'u';
 //	int j = ;
 //	unsigned int k = 3;
 //	int fd = 1;
 //	char c = '*';
 //	char d = '';
 //	char e = '';
-	char *f = "kiuaa";
-	char *g = "kiuki";
+//	char f[30] = "talo";
+	char *g = "bonjour";
 //	char *h = "";
 
 //	ft_putchar(c);
@@ -48,13 +48,13 @@ int		main()
 //	printf("%s", strncat(f, g, len));
 
 //	printf("%d", ft_memcmp(f, g, len));
-	printf("%c", '\n');
-	printf("%d", memcmp(f, g, len));
-	printf("%c", '\n');
+//	printf("%c", '\n');
+//	printf("%d", memcmp(f, g, len));
+//	printf("%c", '\n');
 //	printf("%s", f);
 //	printf("%p", memchr(f, i, len));
 //	printf("%s", f);
-	printf("%d", ft_memcmp(f, g, len));
+//	printf("%d", ft_memcmp(f, g, len));
 
 
 //	printf("%s", f);
@@ -122,6 +122,7 @@ int		main()
 //		i++;
 //	}
 
+	
 
 //	printf("%s", ft_strcpy(ft_strnew(len), "kala"));
 	
@@ -153,7 +154,9 @@ int		main()
 
 //	printf("%s", ft_strchr(f, i));
 	
-//	printf("%s", ft_strrchr(f, i));
+	printf("%s", ft_strrchr(g, i));
+
+//	printf("%zu", ft_strlcat(f, g, len));
 
 	return (0);
 }
