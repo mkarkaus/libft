@@ -6,23 +6,28 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 11:27:10 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 16:41:59 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 17:33:02 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*res;
+	unsigned int	len;
 
+	len = 0;
 	while (*s)
 	{
-		if (*s == c)
-			res = (char *)s;
+		len++;
 		s++;
 	}
-	if (res)
-		return (res);
-	if (c == '\0')
+	while (*s != c && len > 0)
+	{
+		len--;
+		s--;
+	}
+	if (*s == c)
 		return ((char *)s);
 	return (0);
 }

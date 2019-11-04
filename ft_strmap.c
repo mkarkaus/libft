@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 11:45:11 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/24 12:14:26 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:16:16 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		i;
 
 	i = 0;
-	if (!(fresh = (char *)malloc((ft_strlen(s) + 1) * sizeof(fresh))))
+	if (!s || !(fresh = (char *)malloc((ft_strlen(s) + 1) * sizeof(char))))
 		return (0);
 	while (s[i])
 	{

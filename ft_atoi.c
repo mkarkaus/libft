@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:34:48 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/22 17:04:28 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/10/31 15:20:19 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_atoi(char *str)
 		minus = -1;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	while (str[i] || (str[i] >= '0' && str[i] <= '9'))
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + (str[i] - '0');
 		i++;

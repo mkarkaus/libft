@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:57:46 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 14:53:30 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 18:31:49 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	*ft_strcpy(char *s1, const char *s2);
 char	*ft_strncpy(char *dest, const char *src, size_t len);
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strstr(char const *s1, char const *s2);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strchr(char const *s, int c);
 char	*ft_strrchr(char const *s, int c);
@@ -57,6 +58,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
+int		ft_atoi(char *str);
 char	*ft_itoa(int n);
 void	ft_putendl(char const *s);
 void	ft_putnbr(int n);

@@ -6,18 +6,15 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 11:27:39 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 11:27:44 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 17:10:21 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
-
-	str = (char *)s;
-	while (*str && *str != c)
-		str++;
-	if (*str == c)
-		return (str);
+	while (*s && *s != c)
+		s++;
+	if (*s == c)
+		return ((char *)s);
 	return (0);
 }

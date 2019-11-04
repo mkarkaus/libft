@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:09:11 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 12:48:19 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 20:09:19 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	*words(char const *s, char c, int *i)
 	char	*fresh;
 
 	k = 0;
-	if (!(fresh = (char *)malloc((ft_strlen(s) + 1) * (sizeof(fresh)))))
+	if (!(fresh = (char *)malloc((ft_strlen(s) + 1) * sizeof(fresh))))
 		return (0);
 	while (s[*i] != c && s[*i])
 	{
@@ -59,8 +59,10 @@ char		**ft_strsplit(char const *s, char c)
 
 	k = 0;
 	i = 0;
+	if (!s)
+		return (0);
 	wrd = count_words(s, c);
-	if (!(tab = (char **)malloc(((count_words(s, c) + 2) * sizeof(tab)))))
+	if (!(tab = (char **)malloc((count_words(s, c)) * sizeof(tab))))
 		return (0);
 	while (k < wrd && s[i])
 	{
@@ -69,6 +71,6 @@ char		**ft_strsplit(char const *s, char c)
 		tab[k] = words(s, c, &i);
 		k++;
 	}
-	tab[k] = NULL;
+	tab[k] = 0;
 	return (tab);
 }

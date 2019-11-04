@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 14:08:50 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/24 14:46:04 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:26:24 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_strdel(char **as)
 {
-	free(*as);
-	**as = '\0';
+	if (as)
+	{
+		free(*as);
+		*as = 0;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 15:50:42 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 12:36:15 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:02:16 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_memdel(void **ap)
 {
-	free(*ap);
-	*ap = 0;
+	if (ap)
+	{
+		free(*ap);
+		*ap = 0;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:21:07 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 16:25:43 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/10/31 15:11:09 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@
 
 int		main()
 {
-//	size_t len = 40;
-	int i = 'u';
+//	size_t len = 16;
+//	int i = 'u';
 //	int j = ;
 //	unsigned int k = 3;
 //	int fd = 1;
 //	char c = '*';
 //	char d = '';
 //	char e = '';
-//	char f[30] = "talo";
+//	char *f = "gdsrvopppskefbonjourfeajyrjj";
 	char *g = "bonjour";
 //	char *h = "";
 
@@ -73,6 +73,10 @@ int		main()
 //	printf("%s", ft_strstr(f, g));
 //	printf("%c", '\n');
 //	printf("%s", strstr(f, g));
+
+//	printf("%s", ft_strnstr(f, g, len));
+//	printf("%c", '\n');
+//	printf("%s", strnstr(f, g, len));
 
 //	printf("%s", ft_strncpy(f, g, len));
 //	printf("%c", '\n');
@@ -122,7 +126,7 @@ int		main()
 //		i++;
 //	}
 
-	
+	printf("%d", ft_atoi(g));
 
 //	printf("%s", ft_strcpy(ft_strnew(len), "kala"));
 	
@@ -154,7 +158,7 @@ int		main()
 
 //	printf("%s", ft_strchr(f, i));
 	
-	printf("%s", ft_strrchr(g, i));
+//	printf("%s", ft_strrchr(g, i));
 
 //	printf("%zu", ft_strlcat(f, g, len));
 

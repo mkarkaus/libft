@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 11:30:59 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 11:36:09 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 14:46:12 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char			*str;
-	unsigned int	i;
+	unsigned char	*str;
 
-	i = 0;
-	if (!n)
-		return (0);
-	str = (char *)s;
-	while (str[i] && i < n)
+	str = (unsigned char *)s;
+	while (n > 0)
 	{
-		str[i] = (char)c;
-		i++;
+		str[n - 1] = (unsigned char)c;
+		n--;
 	}
 	return (s);
 }

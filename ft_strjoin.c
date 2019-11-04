@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 17:27:14 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/23 17:58:11 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:22:34 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*res;
 
 	i = 0;
+	if (!s1)
+		return (0);
 	res = (char*)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(res));
 	if (!res)
 		return (0);

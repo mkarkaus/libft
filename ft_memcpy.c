@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 11:30:13 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 12:56:38 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 16:38:26 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	src2 = (const char *)src;
 	if (!n || dest == src)
 		return (dest);
-	while (dest2 && src2 && n--)
+	while (n--)
 		*dest2++ = *src2++;
 	return (dest);
 }

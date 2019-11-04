@@ -6,17 +6,20 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 11:30:54 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/22 17:01:35 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 21:01:50 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 static int	ft_len(int n)
 {
-	int len;
+	int		len;
 
 	len = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		n = -n;
@@ -38,6 +41,8 @@ char		*ft_itoa(int n)
 
 	i = ft_len(n);
 	k = i;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	if (!(fresh = (char *)malloc((i + 1) * sizeof(char))))
 		return (0);
 	if (n == 0)

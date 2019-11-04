@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 11:29:31 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 11:35:35 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 14:05:35 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t			i;
 
 	i = -1;
+	if (!dest && !src)
+		return (NULL);
 	dest2 = (unsigned char *)dest;
 	src2 = (unsigned char *)src;
 	if (src2 < dest2)

@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 18:54:41 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/23 19:41:18 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:09:26 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	while (*s)
-		f(s++);
+	if (s)
+		while (*s)
+			f(s++);
 }

@@ -6,7 +6,7 @@
 #    By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/30 11:50:18 by mkarkaus          #+#    #+#              #
-#    Updated: 2019/10/30 14:46:25 by mkarkaus         ###   ########.fr        #
+#    Updated: 2019/11/04 18:32:23 by mkarkaus         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,20 +21,19 @@ ft_putchar_fd.c ft_putstr_fd.c ft_strdel.c ft_tolower.c ft_strncpy.c \
 ft_strsub.c ft_atoi.c ft_isprint.c ft_memcpy.c ft_putendl.c ft_strcat.c \
 ft_strdup.c ft_strlen.c ft_strnequ.c ft_strtrim.c ft_bzero.c ft_itoa.c \
 ft_memdel.c ft_putendl_fd.c ft_strchr.c ft_strequ.c ft_strmap.c ft_strnew.c \
-ft_strlcat.c
+ft_strlcat.c ft_strnstr.c
 
 FLAGS = -Wall -Werror -Wextra
 
-HEAD = includes/*.h
+HEAD = libft.h
 
-OBJ = *.o
+OBJ = $(patsubst %.c, %.o, $(SRC))
 
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(FLAGS) $(SRC) -I $(HEAD)
+	gcc -c $(FLAGS) $(SRC) $(HEAD)
 	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
 
 clean:
 	/bin/rm -f $(OBJ)

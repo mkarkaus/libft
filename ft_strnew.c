@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 14:46:51 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/24 15:47:01 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/04 19:00:20 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnew(size_t size)
 {
 	char	*new;
 
-	if (!(new = (char *)malloc(size * sizeof(new))))
+	if (!(new = (char *)malloc((size + 1) * sizeof(char))))
 		return (0);
 	new[size] = '\0';
 	while (size--)
