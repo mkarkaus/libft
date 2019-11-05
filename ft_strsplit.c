@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:09:11 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/04 20:09:19 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/05 16:41:51 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ static int	count_words(char const *s, char c)
 
 	word = 0;
 	i = 0;
-	while (s[i])
+	if (s[i] != c)
+		word++;
+	while (s[i] && s[i + 1] != '\0')
 	{
 		if (s[i] == c && s[i + 1] != c)
 			word++;
 		i++;
 	}
-	if (s[i - 1] != c)
-		word++;
 	return (word);
 }
 
@@ -37,16 +37,15 @@ static char	*words(char const *s, char c, int *i)
 	char	*fresh;
 
 	k = 0;
-	if (!(fresh = (char *)malloc((ft_strlen(s) + 1) * sizeof(fresh))))
+	if (!(fresh = (char *)malloc((ft_strlen(s) + 1) * sizeof(char))))
 		return (0);
 	while (s[*i] != c && s[*i])
 	{
 		fresh[k] = s[*i];
 		k++;
-		*i += 1;
+		(*i)++;
 	}
-	if (s[*i] == c)
-		fresh[k] = '\0';
+	fresh[k] = '\0';
 	return (fresh);
 }
 
@@ -62,7 +61,7 @@ char		**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (0);
 	wrd = count_words(s, c);
-	if (!(tab = (char **)malloc((count_words(s, c)) * sizeof(tab))))
+	if (!(tab = (char **)malloc((count_words(s, c) + 1) * sizeof(tab))))
 		return (0);
 	while (k < wrd && s[i])
 	{

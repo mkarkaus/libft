@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 16:24:44 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/04 20:01:45 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/05 13:09:52 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ static int	end(char const *s, int i)
 	j = i;
 	while (s[j] && (s[j] == ' ' || s[j] == '\n' || s[j] == '\t'))
 		j++;
-	if (!s[j])
-		return (0);
-	else
+	if (s[j])
 		return (1);
 	return (0);
 }
@@ -32,6 +30,7 @@ char		*ft_strtrim(char const *s)
 	int		i;
 	int		k;
 	char	*cpy;
+	char	*fin;
 
 	k = 0;
 	i = 0;
@@ -46,5 +45,8 @@ char		*ft_strtrim(char const *s)
 		i++;
 	}
 	cpy[k] = '\0';
-	return (cpy);
+	if (!(fin = (char *)malloc((ft_strlen(cpy) + 1) * sizeof(char))))
+		return (0);
+	fin = cpy;
+	return (fin);
 }

@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:21:07 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/31 15:11:09 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/05 16:14:45 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@
 int		main()
 {
 //	size_t len = 16;
-//	int i = 'u';
+	int i = 0;
 //	int j = ;
 //	unsigned int k = 3;
 //	int fd = 1;
-//	char c = '*';
+	char c = ' ';
 //	char d = '';
 //	char e = '';
-//	char *f = "gdsrvopppskefbonjourfeajyrjj";
-	char *g = "bonjour";
+	char *f = "      split       this for   me  !";
+//	char *g = "bonjour";
 //	char *h = "";
 
 //	ft_putchar(c);
@@ -115,18 +115,18 @@ int		main()
 
 //	printf("%s", ft_strmapi(g, testi));
 
-//	char **str;
+	char **str;
 
-//	str = ft_strsplit(f, c);
+	str = ft_strsplit(f, c);
 
-//	while (str[i] && i < )
-//	{
-//		printf("%s", str[i]);
-//		printf("%c", '\n');
-//		i++;
-//	}
+	while (str[i])
+	{
+		printf("%s", str[i]);
+		printf("%c", '\n');
+		i++;
+	}
 
-	printf("%d", ft_atoi(g));
+//	printf("%d", ft_atoi(g));
 
 //	printf("%s", ft_strcpy(ft_strnew(len), "kala"));
 	
