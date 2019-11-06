@@ -6,12 +6,12 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 12:04:50 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 11:43:04 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/06 16:30:03 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	testi(unsigned int i, char c)
+void	testi(void *content, size_t size)
 {
-	if 
-	return (c);
+	if (size != 0)
+		free(content);
 }

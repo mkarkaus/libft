@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/24 15:50:42 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/06 18:36:22 by mkarkaus         ###   ########.fr       */
+/*   Created: 2019/11/06 19:51:58 by mkarkaus          #+#    #+#             */
+/*   Updated: 2019/11/06 20:06:29 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if (ap)
+	while (lst != NULL)
 	{
-		free(*ap);
-		*ap = 0;
+		f(lst);
+		lst = lst->next;
 	}
 }

@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/24 15:50:42 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/06 18:36:22 by mkarkaus         ###   ########.fr       */
+/*   Created: 2019/11/06 20:08:11 by mkarkaus          #+#    #+#             */
+/*   Updated: 2019/11/06 21:11:33 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	if (ap)
+	t_list	*new;
+	t_list	*templist;
+
+	if (!lst)
+		return (0);
+	templist = f(lst);
+	new = templist;
+	while (lst->next)
 	{
-		free(*ap);
-		*ap = 0;
+		lst = lst->next;
+		if (!(templist->next = f(lst)))
+		{
+			free(templist->next);
+			return (0);
+		}
+		templist = templist->next;
 	}
+	return (new);
 }

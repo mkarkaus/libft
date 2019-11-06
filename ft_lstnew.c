@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/24 15:50:42 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/06 18:36:22 by mkarkaus         ###   ########.fr       */
+/*   Created: 2019/11/06 12:40:48 by mkarkaus          #+#    #+#             */
+/*   Updated: 2019/11/06 20:40:12 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	if (ap)
+	t_list *temp;
+
+	if (!(temp = (t_list *)malloc(sizeof(t_list))))
+		return (0);
+	if (content == 0)
 	{
-		free(*ap);
-		*ap = 0;
+		temp->content = NULL;
+		temp->content_size = 0;
 	}
+	else
+	{
+		if (!(temp->content = malloc(content_size)))
+			return (0);
+		ft_memcpy(temp->content, content, content_size);
+		temp->content_size = content_size;
+	}
+	temp->next = NULL;
+	return (temp);
 }

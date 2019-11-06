@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:57:46 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/05 17:28:35 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/06 21:09:37 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+t_list			*ft_lstnew(void const *content, size_t content_size);
 size_t			ft_strlcat(char *dest, const char *src, size_t len);
 size_t			ft_strlen(const char *s);
 void			ft_putchar(char c);

@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:21:07 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/05 16:14:45 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/06 21:08:22 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,42 @@
 //void	*memchr(const void *s, int c, size_t n);
 //int	memcmp(const void *s1, const void *s2, size_t n);
 
+void	ft_memmemdel(void *ap, size_t size)
+{
+	if (ap && size)
+	{
+		free(ap);
+		ap = 0;
+	}
+}
+
 int		main()
 {
 //	size_t len = 16;
-	int i = 0;
+//	int i = 0;
 //	int j = ;
 //	unsigned int k = 3;
 //	int fd = 1;
-	char c = ' ';
+//	char c = ' ';
 //	char d = '';
 //	char e = '';
-	char *f = "      split       this for   me  !";
+//	char *f = "      split       this for   me  !";
 //	char *g = "bonjour";
 //	char *h = "";
 
 //	ft_putchar(c);
 //	ft_putnbr(i);
 //	ft_putstr(g);
+
+//	printf("%d", ft_lstnew("heh", 4));
+
+	printf("%d", ft_lstmap())
+
+//	t_list *list = ft_lstnew("heh", 4);
+//	printf("%s", list->content);
+//	printf("%c", '\n');
+//	ft_lstdel(&list, &ft_memmemdel);
+//	printf("%s", list->content);
 
 //	printf("%s", ft_strcat(f, g));
 //	printf("%c", '\n');
@@ -115,16 +134,16 @@ int		main()
 
 //	printf("%s", ft_strmapi(g, testi));
 
-	char **str;
+//	char **str;
 
-	str = ft_strsplit(f, c);
+//	str = ft_strsplit(f, c);
 
-	while (str[i])
-	{
-		printf("%s", str[i]);
-		printf("%c", '\n');
-		i++;
-	}
+//	while (str[i])
+//	{
+//		printf("%s", str[i]);
+//		printf("%c", '\n');
+//		i++;
+//	}
 
 //	printf("%d", ft_atoi(g));
 

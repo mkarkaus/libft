@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/24 15:50:42 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/06 18:36:22 by mkarkaus         ###   ########.fr       */
+/*   Created: 2019/11/06 17:57:45 by mkarkaus          #+#    #+#             */
+/*   Updated: 2019/11/06 18:54:15 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-void	ft_memdel(void **ap)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	if (ap)
+	t_list	*nxtlink;
+
+	while (*alst)
 	{
-		free(*ap);
-		*ap = 0;
+		nxtlink = (*alst)->next;
+		del((*alst)->content, (*alst)->content_size);
+		free(*alst);
+		*alst = nxtlink;
 	}
+	*alst = NULL;
 }
