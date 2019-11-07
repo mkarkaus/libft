@@ -6,11 +6,12 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 13:47:46 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/22 17:04:49 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/07 13:21:31 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar(char c)
 {

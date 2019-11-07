@@ -6,11 +6,13 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 15:34:48 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/04 21:12:33 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/07 19:47:55 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+#include "libft.h"
+
+int		ft_atoi(const char *str)
 {
 	int i;
 	int minus;

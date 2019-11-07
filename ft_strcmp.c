@@ -6,9 +6,11 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 11:54:04 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/31 14:47:46 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/07 13:24:14 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_strcmp(const char *s1, const char *s2)
 {

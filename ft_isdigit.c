@@ -6,9 +6,11 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 11:25:25 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/30 11:25:29 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/07 13:18:20 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

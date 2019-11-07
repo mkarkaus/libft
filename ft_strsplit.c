@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:09:11 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/05 16:41:51 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/07 19:49:05 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char		**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (0);
 	wrd = count_words(s, c);
-	if (!(tab = (char **)malloc((count_words(s, c) + 1) * sizeof(tab))))
+	if (!(tab = (char **)malloc((wrd + 1) * sizeof(tab))))
 		return (0);
 	while (k < wrd && s[i])
 	{

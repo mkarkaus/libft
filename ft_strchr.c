@@ -6,9 +6,11 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 11:27:39 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/04 17:10:21 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/07 13:23:46 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

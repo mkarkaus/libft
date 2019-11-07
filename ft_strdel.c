@@ -6,11 +6,12 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 14:08:50 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/04 19:26:24 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/07 13:24:55 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 void	ft_strdel(char **as)
 {

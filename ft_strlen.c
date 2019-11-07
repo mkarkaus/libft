@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 17:11:55 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/10/23 12:41:58 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/07 19:49:32 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t		ft_strlen(const char *str)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')

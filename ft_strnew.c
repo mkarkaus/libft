@@ -6,11 +6,12 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 14:46:51 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/04 19:00:20 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/07 13:28:16 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strnew(size_t size)
 {
