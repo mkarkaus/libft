@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 20:08:11 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/07 13:19:45 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/08 12:18:15 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	if (!lst)
 		return (0);
-	templist = f(lst);
+	if (!(templist = f(lst)))
+		return (NULL);
 	new = templist;
 	while (lst->next)
 	{

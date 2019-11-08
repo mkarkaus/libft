@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:57:46 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/07 19:47:47 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/08 12:55:02 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
+void			ft_swap(int *a, int *b);
+int				ft_isblank(unsigned char c);
 
 #endif
