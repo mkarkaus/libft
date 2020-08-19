@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_itoa_llong.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 11:29:53 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/07 13:20:12 by mkarkaus         ###   ########.fr       */
+/*   Created: 2020/07/06 11:24:55 by mkarkaus          #+#    #+#             */
+/*   Updated: 2020/07/06 12:55:20 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+char		*ft_itoa_llong(long long n)
 {
-	unsigned char	*dest2;
-	unsigned char	*src2;
-	size_t			i;
+	char	*fresh;
+	int		i;
+	int		k;
 
-	i = 0;
-	dest2 = (unsigned char *)dest;
-	src2 = (unsigned char *)src;
-	while (i < n)
+	i = ft_intlen_llong(n);
+	k = i;
+	fresh = ft_memalloc(i + 1);
+	if (n == 0)
+		fresh[0] = '0';
+	if (n == -9223372036854775807 - 1)
+		return (ft_strdup("-9223372036854775808"));
+	if (n < 0)
 	{
-		dest2[i] = src2[i];
-		if (dest2[i] == (unsigned char)c)
-			return ((void *)dest + i + 1);
-		i++;
+		fresh[0] = '-';
+		n *= -1;
 	}
-	return (0);
+	while (n > 0)
+	{
+		i--;
+		fresh[i] = n % 10 + '0';
+		n /= 10;
+	}
+	fresh[k] = '\0';
+	return (fresh);
 }

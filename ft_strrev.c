@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 11:29:53 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/07 13:20:12 by mkarkaus         ###   ########.fr       */
+/*   Created: 2020/07/03 12:45:07 by mkarkaus          #+#    #+#             */
+/*   Updated: 2020/07/03 12:45:58 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+char	*ft_strrev(char *str, int free_str)
 {
-	unsigned char	*dest2;
-	unsigned char	*src2;
-	size_t			i;
+	int		i;
+	int		j;
+	char	*res;
 
-	i = 0;
-	dest2 = (unsigned char *)dest;
-	src2 = (unsigned char *)src;
-	while (i < n)
+	j = 0;
+	i = ft_strlen(str) - 1;
+	if (!(res = (char *)malloc((i + 2) * sizeof(char))))
+		return (0);
+	while (i >= 0)
 	{
-		dest2[i] = src2[i];
-		if (dest2[i] == (unsigned char)c)
-			return ((void *)dest + i + 1);
-		i++;
+		res[j] = str[i];
+		i--;
+		j++;
 	}
-	return (0);
+	res[j] = '\0';
+	if (free_str)
+		free(str);
+	return (res);
 }

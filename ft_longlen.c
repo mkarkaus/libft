@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_longlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 11:29:53 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/07 13:20:12 by mkarkaus         ###   ########.fr       */
+/*   Created: 2020/07/03 12:44:04 by mkarkaus          #+#    #+#             */
+/*   Updated: 2020/07/03 12:44:06 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+int		ft_longlen(long n)
 {
-	unsigned char	*dest2;
-	unsigned char	*src2;
-	size_t			i;
+	int	len;
 
-	i = 0;
-	dest2 = (unsigned char *)dest;
-	src2 = (unsigned char *)src;
-	while (i < n)
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
-		dest2[i] = src2[i];
-		if (dest2[i] == (unsigned char)c)
-			return ((void *)dest + i + 1);
-		i++;
+		n = -n;
+		len++;
 	}
-	return (0);
+	while (n > 0)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
 }

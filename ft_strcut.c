@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcut.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 11:29:53 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/07 13:20:12 by mkarkaus         ###   ########.fr       */
+/*   Created: 2020/07/03 11:36:36 by mkarkaus          #+#    #+#             */
+/*   Updated: 2020/07/03 12:44:46 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+char	*ft_strcut(char *str, int vol, int dir, int free_str)
 {
-	unsigned char	*dest2;
-	unsigned char	*src2;
-	size_t			i;
+	char	*new;
+	int		i;
+	int		start;
+	int		end;
+	int		len;
 
+	end = 0;
+	start = 0;
 	i = 0;
-	dest2 = (unsigned char *)dest;
-	src2 = (unsigned char *)src;
-	while (i < n)
+	if (dir == 0)
+		start += vol;
+	else if (dir == 1)
+		end += vol;
+	len = ft_strlen(str);
+	new = ft_memalloc(len - vol + 1);
+	while (i + start < len - end)
 	{
-		dest2[i] = src2[i];
-		if (dest2[i] == (unsigned char)c)
-			return ((void *)dest + i + 1);
+		new[i] = str[i + start];
 		i++;
 	}
-	return (0);
+	new[i] = '\0';
+	if (free_str)
+		free(str);
+	return (new);
 }

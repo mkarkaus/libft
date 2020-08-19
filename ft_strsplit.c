@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:09:11 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/13 19:52:43 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/07 19:49:05 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,10 @@ static int	count_words(char const *s, char c)
 static char	*words(char const *s, char c, int *i)
 {
 	int		k;
-	int		len;
 	char	*fresh;
 
-	len = 0;
 	k = 0;
-	while (s[*i + len] != c && s[*i + len])
-		len++;
-	if (!(fresh = (char *)malloc((len + 1) * sizeof(char))))
+	if (!(fresh = (char *)malloc((ft_strlen(s) + 1) * sizeof(char))))
 		return (0);
 	while (s[*i] != c && s[*i])
 	{

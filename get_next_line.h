@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 11:29:53 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/07 13:20:12 by mkarkaus         ###   ########.fr       */
+/*   Created: 2019/11/13 13:06:17 by mkarkaus          #+#    #+#             */
+/*   Updated: 2019/11/25 14:23:42 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define BUFF_SIZE 8
+# define MAX_FD 4864
+# include "libft.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
-{
-	unsigned char	*dest2;
-	unsigned char	*src2;
-	size_t			i;
+int		get_next_line(const int fd, char **line);
 
-	i = 0;
-	dest2 = (unsigned char *)dest;
-	src2 = (unsigned char *)src;
-	while (i < n)
-	{
-		dest2[i] = src2[i];
-		if (dest2[i] == (unsigned char)c)
-			return ((void *)dest + i + 1);
-		i++;
-	}
-	return (0);
-}
+#endif

@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 11:35:39 by mkarkaus          #+#    #+#             */
-/*   Updated: 2019/11/13 19:11:23 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2019/11/13 11:47:35 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ int		ft_intlen(int n)
 	len = 0;
 	if (n == 0)
 		return (1);
-	if (n < 0)
+	if (n == -2147483648)
+		return (11);
+	else if (n < 0)
 	{
 		n = -n;
 		len++;
