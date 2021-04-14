@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 13:06:17 by mkarkaus          #+#    #+#             */
-/*   Updated: 2021/02/09 15:26:32 by sreijola         ###   ########.fr       */
+/*   Created: 2020/09/24 12:36:19 by mkarkaus          #+#    #+#             */
+/*   Updated: 2020/12/03 15:00:46 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 8
-# define MAX_FD 4864
-# include "libft.h"
+#include "../../includes/libft.h"
 
-int		get_next_line(const int fd, char **line, int end);
-
-#endif
+void	ft_lstprint(t_list *alst)
+{
+	while (alst != NULL)
+	{
+		ft_printf("%s\n", alst->content);
+		alst = alst->next;
+	}
+}

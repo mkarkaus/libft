@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 14:57:46 by mkarkaus          #+#    #+#             */
-/*   Updated: 2020/09/02 11:37:28 by mkarkaus         ###   ########.fr       */
+/*   Created: 2021/04/10 14:31:21 by mkarkaus          #+#    #+#             */
+/*   Updated: 2021/04/10 14:31:23 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+void			ft_lstprint(t_list *alst);
+void			ft_lstapp(t_list **alst, t_list *end);
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void			ft_lstadd(t_list **alst, t_list *new);
@@ -81,6 +83,7 @@ char			*ft_strrev(char *str, int free_str);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_strcut(char *str, int vol, int dir, int free_str);
 int				ft_atoi(const char *str);
+unsigned int	ft_atoui(const char *str);
 char			*ft_itoa(int n);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
@@ -101,7 +104,28 @@ int				ft_intlen_llong(long long n);
 char			*ft_itoa_ptr(int *n);
 int				ft_onlydigits(char *str);
 void			ft_free_arrays(void **ptr, int rows);
+
 void			ft_pr_intarr(int **arr, int maxr, int maxc, int fd);
 void			ft_pr_chararr(char **arr, int maxr, int fd);
+void			ft_pr_hex(unsigned char *mem, int len, int fd);
+
+void			ft_strarr_free(char **arr);
+char			**ft_strarr_malloc(int rows, int cols);
+int				ft_strarrsize(char **arr);
+void			ft_lstfree(t_list *lst);
+int				ft_lstlen(t_list *lst);
+void			ft_arr_free(void **tab, int max_rows);
+void			**ft_arr_malloc(unsigned long ptrs, unsigned long bytes);
+void			ft_tabarr_free(int **tab, int max_rows);
+int				**ft_tabarr_malloc(int max_rows, int max_cols);
+int				ft_tabint_find(int *tab, int to_find, int tab_len);
+int				ft_tabnequ(int *t1, int *t2, int n);
+
+int				ft_strarr_size(char **arr);
+void			ft_strarr_free(char **arr);
+void			ft_strarr_print(char **arr);
+
+void			ft_byterev(uint8_t *mem, unsigned int len);
+void			ft_exit(char *errstr);
 
 #endif

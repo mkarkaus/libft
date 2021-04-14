@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pr_intarr.c                                     :+:      :+:    :+:   */
+/*   ft_atoui.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/02 11:34:06 by mkarkaus          #+#    #+#             */
-/*   Updated: 2021/01/11 10:40:50 by mkarkaus         ###   ########.fr       */
+/*   Created: 2021/03/05 15:31:38 by mkarkaus          #+#    #+#             */
+/*   Updated: 2021/03/05 15:50:37 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-void	ft_pr_intarr(int **arr, int maxr, int maxc, int fd)
+unsigned int	ft_atoui(const char *str)
 {
-	int		i;
-	int		j;
+	int				i;
+	unsigned int	res;
 
-	i = -1;
-	while (++i < maxr)
+	res = 0;
+	i = 0;
+	while (str[i] && (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
+				str[i] == '\v' || str[i] == '\f' || str[i] == '\r'))
+		i++;
+	if (str[i] == '+')
+		i++;
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
-		j = 0;
-		while (j < maxc)
-		{
-			ft_printf("{fd}%3i ", fd, arr[i][j]);
-			j++;
-		}
-		ft_printf("{fd}\n", fd);
+		res = res * 10 + (str[i] - '0');
+		i++;
 	}
+	return (res);
 }

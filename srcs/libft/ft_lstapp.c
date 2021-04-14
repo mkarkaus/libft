@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_lstapp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 13:06:17 by mkarkaus          #+#    #+#             */
-/*   Updated: 2021/02/09 15:26:32 by sreijola         ###   ########.fr       */
+/*   Created: 2020/09/24 10:25:30 by mkarkaus          #+#    #+#             */
+/*   Updated: 2020/09/24 12:39:33 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 8
-# define MAX_FD 4864
-# include "libft.h"
+#include "../../includes/libft.h"
 
-int		get_next_line(const int fd, char **line, int end);
-
-#endif
+void	ft_lstapp(t_list **alst, t_list *end)
+{
+	while ((*alst)->next)
+		*alst = (*alst)->next;
+	(*alst)->next = end;
+}

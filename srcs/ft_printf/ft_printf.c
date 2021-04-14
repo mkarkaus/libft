@@ -6,7 +6,7 @@
 /*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 11:47:20 by mkarkaus          #+#    #+#             */
-/*   Updated: 2020/08/27 17:52:38 by mkarkaus         ###   ########.fr       */
+/*   Updated: 2021/04/08 12:25:56 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		colcheck(t_flag *f, const char *format)
 		i++;
 	if (g_cname[i])
 	{
+		ft_putstr_fd(CLR_CODE, f->fd);
 		ft_putstr_fd(g_ccode[i], f->fd);
 		return (ft_strlen(g_cname[i]));
 	}

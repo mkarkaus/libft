@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_tabnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 13:06:17 by mkarkaus          #+#    #+#             */
-/*   Updated: 2021/02/09 15:26:32 by sreijola         ###   ########.fr       */
+/*   Created: 2020/11/02 13:48:54 by sreijola          #+#    #+#             */
+/*   Updated: 2021/02/26 11:36:56 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 8
-# define MAX_FD 4864
-# include "libft.h"
+#include "../../includes/libft.h"
 
-int		get_next_line(const int fd, char **line, int end);
+int		ft_tabnequ(int *t1, int *t2, int n)
+{
+	int	i;
 
-#endif
+	i = 0;
+	if (!t1 || !t2)
+		return (0);
+	while (i < n && t1[i] == t2[i])
+		i++;
+	if (i == n)
+		return (1);
+	return (0);
+}

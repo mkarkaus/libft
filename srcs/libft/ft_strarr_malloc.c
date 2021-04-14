@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strarr_malloc.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 19:10:40 by mkarkaus          #+#    #+#             */
-/*   Updated: 2020/10/07 12:58:07 by sreijola         ###   ########.fr       */
+/*   Created: 2020/09/27 18:55:23 by sreijola          #+#    #+#             */
+/*   Updated: 2020/09/30 16:49:38 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "../../includes/libft.h"
 
-char	*ft_strdup(const char *src)
+char	**ft_strarr_malloc(int rows, int cols)
 {
-	char	*cpy;
 	int		i;
-	int		len;
+	char	**tmp;
 
-	len = 0;
-	while (src[len])
-		len++;
-	if (!(cpy = (char *)malloc((len + 1) * sizeof(char))))
-		return (0);
-	i = 0;
-	while (src[i])
+	i = -1;
+	if (!(tmp = (char **)malloc((rows + 1) * sizeof(char *))))
+		return (NULL);
+	while (++i < rows)
 	{
-		cpy[i] = src[i];
-		i++;
+		if (!(tmp[i] = (char *)malloc((cols + 1) * sizeof(char))))
+			return (NULL);
 	}
-	cpy[i] = '\0';
-	return (cpy);
+	tmp[i] = NULL;
+	return (tmp);
 }

@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_tabarr_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: mkarkaus <mkarkaus@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/13 13:06:17 by mkarkaus          #+#    #+#             */
-/*   Updated: 2021/02/09 15:26:32 by sreijola         ###   ########.fr       */
+/*   Created: 2020/09/28 04:24:18 by sreijola          #+#    #+#             */
+/*   Updated: 2021/03/05 12:49:26 by mkarkaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 8
-# define MAX_FD 4864
-# include "libft.h"
+#include "../../includes/libft.h"
 
-int		get_next_line(const int fd, char **line, int end);
-
-#endif
+void	ft_tabarr_free(int **tab, int max_rows)
+{
+	if (!tab)
+		return ;
+	while (--max_rows >= 0)
+		free(tab[max_rows]);
+	free(tab);
+}
